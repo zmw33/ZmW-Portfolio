@@ -1,0 +1,892 @@
+﻿@{
+    Layout = null;
+    ViewBag.Title = "Home Page";
+}
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Zachary M. Wilson's Portfolio</title>
+
+    <link rel="icon" class="fav" href="~/Images/favicon.png" />
+
+    <style>
+        .carousel-inner > .item > img {
+            margin: auto;
+        }
+
+        .index {
+            font-family: Cooper,serif;
+            text-shadow: 3px 3px #000000;
+            color: gold;
+        }
+
+        .index2 {
+            font-family: Cooper,serif;
+            color: darkgoldenrod;
+            font-size: 28px;
+            text-shadow: 2px 2px #000000;
+            padding-bottom: 35px;
+        }
+
+        .imgcirc {
+            border-radius: 60%;
+            max-width: 300px;
+            max-height: 300px;
+            width: auto;
+            height: auto;
+        }
+
+        .samesize {
+            height: 400px;
+            width: 100%;
+        }
+
+        .icon-z {
+            height: 100px;
+            width: 100px;
+            border-radius: 50%;
+        }
+
+        .pad {
+            padding-top: 25px;
+        }
+
+        .fav {
+            height: 16px;
+            width: 16px;
+        }
+
+        .boldItalicGreen {
+            color: green;
+        }
+
+        .boldItalicPurple {
+            color: purple;
+        }
+
+        .boldItalicOrange {
+            color: orange;
+        }
+
+        /* Darker background on mouse-over */
+        .btn:hover {
+            background-color: orange;
+        }
+    </style>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="~/Scripts/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Custom Fonts -->
+    <link href="~/Scripts/font-awesome.min.css" rel="stylesheet" />
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+
+    <!-- Add icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Plugin CSS -->
+    <!--Syntax Highlighter-->
+    <link href="~/Content/SyntaxHighlighter/shCore.css" rel="stylesheet" />
+    <link href="~/Content/SyntaxHighlighter/shThemeEclipse.css" rel="stylesheet" />
+
+    <!-- Theme CSS -->
+    <link href="~/Scripts/creative.min.css" rel="stylesheet" />
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body id="page-top">
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" style="color:black" href="#page-top">Home</a>
+                <span class="navbar-brand" style="color:black"> | </span>
+                <a class="navbar-brand" style="color:black" href="https://zw-blog.azurewebsites.net" target="_blank"><i>My Blog</i></a>
+                <span class="navbar-brand" style="color:black"> | </span>
+                <a class="navbar-brand" style="color:black" href="https://zwbugtracker.azurewebsites.net/Account/DemoLogin" target="_blank"><i>My Bug Tracker</i></a>
+                <span class="navbar-brand" style="color:black"> | </span>
+                <a class="navbar-brand" style="color:black" href="https://zmw-financialportal.azurewebsites.net/" target="_blank"><i>My Financial Portal</i></a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a class="page-scroll" style="color:midnightblue" href="#portfolio">My Portfolio</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" style="color:midnightblue" href="#examples">JS Examples</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" style="color:midnightblue" href="#code">Code For JS Examples</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" style="color:midnightblue" href="#game">Console App</a>
+                    </li>
+                    <li>
+                        @Html.ActionLink("About", "About", "Home", new { @style = "color:midnightblue;" })
+                    </li>
+                    <li>
+                        @Html.ActionLink("Contact", "Contact", "Home", new { @style = "color:midnightblue;" })
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+    <header style="background-image: url(https://www.terrafermamedia.com/wp-content/uploads/2015/05/6-things.png)">
+        <div class="header-content">
+            <div class="header-content-inner">
+                <h1 id="homeHeading" class="index"><b>Zachary M. Wilson</b></h1>
+
+                <!--resize-->
+
+                <div>
+                    <img height="300" width="300" class="imgcirc" src="~/Images/Zachary Wilson.jpg" />
+                </div>
+
+                <span class="index2"><b>Lexington, NC</b></span>
+                
+                <br />
+                <br />
+                
+                <!-- Download Resume -->
+                <a href="~/Images/Zachary Wilson.pdf" download class="btn btn-danger">Donwload My Resume</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="portfolio">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="service-box text-center">
+                        <a href="https://zw-blog.azurewebsites.net/" target="_blank">
+                            <img src="~/Images/blogpicyo.png" class="icon-z fa fa-4x text-primary sr-icons">
+                        </a>
+                        <h3>My Blog</h3>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="service-box text-center">
+                        <a href="https://zwbugtracker.azurewebsites.net/" target="_blank">
+                            <img src="~/Images/bug-silhouette-image.png" class="icon-z fa fa-4x text-primary sr-icons">
+                        </a>
+                        <h3>My Bug Tracker</h3>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="service-box text-center">
+                        <a href="https://zmw-financialportal.azurewebsites.net/" target="_blank">
+                            <img src="~/Images/money.jpg" class="icon-z fa fa-4x text-primary sr-icons">
+                        </a>
+                        <h3>My Financial Portfolio</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-primary" id="examples">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <div id="myCarousel" class="carousel slide">
+
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner samesize">
+                            <div class="item active">
+                                <div class="container col-md-12">
+                                    <div class="row h3">
+                                        <div class="col-md-12 text-center"><b>Five Fast Functions</b></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-7 text-center">
+                                            <div class="row">
+                                                <div class="col-md-8 text-right"><b>Enter Number 1:</b></div>
+                                                <div class="col-md-4">
+                                                    <i><input id="num1" type="number" class="form-control" placeholder="Enter #1" /></i>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-8 text-right"><b>Enter Number 2:</b></div>
+                                                <div class="col-md-4">
+                                                    <i><input id="num2" type="number" class="form-control" placeholder="Enter #2" /></i>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-8 text-right"><b>Enter Number 3:</b></div>
+                                                <div class="col-md-4">
+                                                    <i><input id="num3" type="number" class="form-control" placeholder="Enter #3" /></i>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-8 text-right"><b>Enter Number 4:</b></div>
+                                                <div class="col-md-4">
+                                                    <i><input id="num4" type="number" class="form-control" placeholder="Enter #4" /></i>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-8 text-right"><b>Enter Number 5:</b></div>
+                                                <div class="col-md-4">
+                                                    <i><input id="num5" type="number" class="form-control" placeholder="Enter #5" /></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row pad">
+                                        <div class="col-md-12 text-center">
+                                            <button id="btn1" class="btn btn-primary" @*data-toggle="modal" data-target="#myModal2"*@>Calculate</button>
+                                            <button id="btn2" class="btn btn-alert-danger">Clear</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="item">
+                                <div class="container col-md-12">
+                                    <div class="row h3">
+                                        <div class="col-md-12 text-center"><b>Pursuing Palindromes</b></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-7 text-center">
+                                            <div class="row">
+                                                <div class="col-md-8 text-right"><b>Enter Word:</b></div>
+                                                <div class="col-md-4">
+                                                    <i><input id="word1" type="text" class="form-control" placeholder="Enter Word" /></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row pad">
+                                        <div class="col-md-12 text-center">
+                                            <button id="btnpal" class="btn btn-primary" @*data-toggle="modal" data-target="#myModal3"*@>Run Test</button>
+                                            <button id="btnpalcl" class="btn btn-alert-danger">Clear</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="item">
+                                <div class="container col-md-12">
+                                    <div class="row h3">
+                                        <div class="col-md-12 text-center"><b>Factorial Frenzy</b></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-7 text-center">
+                                            <div class="row">
+                                                <div class="col-md-8 text-right"><b>Enter Number:</b></div>
+                                                <div class="col-md-4">
+                                                    <i><input id="fac1" type="number" class="form-control" placeholder="Enter #" /></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row pad">
+                                        <div class="col-md-12 text-center">
+                                            <button id="btnfac" class="btn btn-primary" @*data-toggle="modal" data-target="#myModal4"*@>Fac-Check</button>
+                                            <button id="btnfaccl" class="btn btn-alert-danger">Clear</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="item">
+                                <div class="container col-md-12">
+                                    <div class="row h3">
+                                        <div class="col-md-12 text-center"><b>Fizz Buzz</b></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-7 text-center">
+                                            <div class="row">
+                                                <div class="col-md-8 text-right"><b>Enter Number 1:</b></div>
+                                                <div class="col-md-4">
+                                                    <i><input id="numfiz" type="number" class="form-control" placeholder="Fizz" /></i>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-8 text-right"><b>Enter Number 2:</b></div>
+                                                <div class="col-md-4">
+                                                    <i><input id="numbuz" type="number" class="form-control" placeholder="Buzz" /></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row pad">
+                                        <div class="col-md-12 text-center">
+                                            <button id="btnfb" class="btn btn-primary" @*data-toggle="modal" data-target="#myModal2"*@>Calculate</button>
+                                            <button id="btnfbcl" class="btn btn-alert-danger">Clear</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Left and right controls -->
+                            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                                <span class="glyphicon glyphicon-chevron-left"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                                <span class="glyphicon glyphicon-chevron-right"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Modal -->
+
+                    <div id="myModal2" class="modal fade" role="dialog">
+                        <div class="modal-dialog">
+
+                            <!-- Modal2 content-->
+
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title text-center" style="color:black"><b>Solutions:</b></h4>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="col-md-12 text-center">
+                                            <div class="row">
+                                                <p id="output1" style="color:black"></p>
+                                            </div>
+                                            <div class="row">
+                                                <p id="output2" style="color:black"></p>
+                                            </div>
+                                            <div class="row">
+                                                <p id="output3" style="color:black"></p>
+                                            </div>
+                                            <div class="row">
+                                                <p id="output4" style="color:black"></p>
+                                            </div>
+                                            <div class="row">
+                                                <p id="output5" style="color:black"></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="myModal3" class="modal fade" role="dialog">
+                        <div class="modal-dialog">
+
+                            <!-- Modal3 Content-->
+
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title text-center" style="color:black"><b>Guess What?</b></h4>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="col-md-12 text-center">
+                                            <p id="palout" style="color:black"></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="myModal4" class="modal fade" role="dialog">
+                        <div class="modal-dialog">
+
+                            <!-- Modal4 Content-->
+
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title text-center" style="color:black"><b>Here It Is!</b></h4>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="col-md-12 text-center">
+                                            <p id="facout" style="color:black"></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="myModal5" class="modal fade" role="dialog">
+                        <div class="modal-dialog">
+
+                            <!-- Modal5 content-->
+
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title text-center" style="color:black"><b>Behold... Fizz Buzz!</b></h4>
+                                </div>
+                                <div class="modal-body">
+                                    <p id="fzbzout" style="color:black"></p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="code">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading"><b>Code For Examples:</b></h2>
+                </div>
+            </div>
+        </div>
+
+        <br>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 text-center">
+                    <div class="service-box">
+                        <a href="#myModal7" role="button"><img id="imgclick1" src="~/Images/5.png" class="icon-z fa fa-4x text-primary sr-icons"></a>
+                        <h3>Five Fast Functions</h3>
+                        <p class="text-muted">Find the sum, product, mean, minimum, & maximum of five numerical inputs.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center">
+                    <div class="service-box">
+                        <a href="#myModal6" role="button"><img id="imgclick" src="~/Images/words.jpg" class="icon-z fa fa-4x text-primary sr-icons"></a>
+                        <h3>Pursuing Palindromes</h3>
+                        <p class="text-muted">Determine whether or not an input word is a palindrome.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center">
+                    <div class="service-box">
+                        <a href="#myModal8" role="button"><img id="imgclick2" src="~/Images/exclam.jpg" class="icon-z fa fa-4x text-primary sr-icons"></a>
+                        <h3>Factorial Frenzy</h3>
+                        <p class="text-muted">Calculate the factorial of one numerical input.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center">
+                    <div class="service-box">
+                        <a href="#myModal9" role="button"><img id="imgclick3" src="~/Images/fibu.jpg" class="icon-z fa fa-4x text-primary sr-icons"></a>
+                        <h3>Fizz-Buzz</h3>
+                        <p class="text-muted">Display the words "fizz" & "buzz" in place of the multiples of two numerical inputs.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section style="background-color:seagreen" id="game">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading" style="color:white"><b>Console Application:</b></h2>
+            </div>
+        </div>
+
+        <br />
+
+        <!-- INSERT CONSOLE APP VIDEO AS MP4 -->
+
+        <video controls="controls" class="text-center samesize" style="padding-bottom:30px">
+            <source src="~/Videos/Screen%20Recording%20(10-18-2018%2012-48-42%20AM).mp4" type="video/mp4" />
+        </video>
+
+        <br />
+
+        <div id="myCarousel2" class="carousel slide" data-ride="carousel">
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner text-center samesize">
+                <div class="item active">
+                    <img src="~/Images/GameImgs/Opening.png" alt="Opening View">
+                    <div class="carousel-caption">
+                        <h3>This is the opening view of my console application.</h3>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <img src="~/Images/GameImgs/Stats.png" alt="Hero Stats">
+                    <div class="carousel-caption">
+                        <h3>This view is where the hero's stats are displayed.</h3>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <img src="~/Images/GameImgs/Shop.png" alt="Shop">
+                    <div class="carousel-caption">
+                        <h3>This is the shop where you can buy weapons, armor, and potions.</h3>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <img src="~/Images/GameImgs/Inventory.png" alt="Hero Inventory">
+                    <div class="carousel-caption">
+                        <h3>This view displays the hero's inventory after purchasing one of each item from the shop.</h3>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <img src="~/Images/GameImgs/Fight.png" alt="Fighting">
+                    <div class="carousel-caption">
+                        <h3>This view shows the fight sequence. After your first move you have the option to run, which is not always successful.</h3>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#myCarousel2" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel2" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="row">
+            <div class="col-lg-2"></div>
+            <div class="col-lg-4 text-center">
+                <div class="service-box text-center">
+                    <a href="https://github.com/zmw33" target="_blank">
+                        <img src="~/Images/github-512.png" class="icon-z fa fa-4x text-primary sr-icons">
+                    </a>
+                    <h3>GitHub</h3>
+                </div>
+            </div>
+            <div class="col-lg-4 text-center">
+                <div class="service-box text-center">
+                    <a href="https://www.linkedin.com/in/zachary-wilson-b4752416b/" target="_blank">
+                        <img src="~/Images/linkedin_circle_logo.png" class="icon-z fa fa-4x text-primary sr-icons">
+                    </a>
+                    <h3>LinkedIn</h3>
+                </div>
+            </div>
+            <div class="col-lg-2"></div>
+        </div>
+    </footer>
+
+    <!--Modal 6-->
+    <div id="myModal6" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal6 content-->
+
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <div class="row">
+                                <pre class="brush: js">
+    $("#btnpal").click(function () {
+        var word1 = $("#word1").val();
+
+        var revWord = "";
+        if (word1 !== "")
+        {
+            for (var loop = word1.length - 1; loop >= 0; loop--)
+            {
+                revWord += word1.substr(loop, 1);
+            }
+            if (word1.toUpperCase() === revWord.toUpperCase())
+            {
+                $("#palout").text(word1 + " is a palindrome!");
+            }
+            else
+            {
+                $("#palout").text(word1 + " is not a palindrome...");
+            }
+            $('#myModal3').modal('show');
+        }
+        else
+        {
+            swal("Whoopsy!", "Please enter a word before running.");
+        }
+    });
+
+    $("#btnpalcl").click(function () {
+        $("#word1").val("");
+        $("#palout").html("");
+    });
+                                </pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Modal 7-->
+    <div id="myModal7" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal7 content-->
+
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <pre class="brush: js">
+    $("#btn1").click(function () {
+
+        var num1 = $("#num1").val();
+        var num2 = $("#num2").val();
+        var num3 = $("#num3").val();
+        var num4 = $("#num4").val();
+        var num5 = $("#num5").val();
+
+        if (num1 !== "" && num2 !== "" && num3 !== "" && num4 !== "" && num5 !== "") {
+            var sum = +num1 + +num2 + +num3 + +num4 + +num5;
+            var product = +num1 * +num2 * +num3 * +num4 * +num5;
+            var mean = sum / 5;
+            var min = Math.min(num1, num2, num3, num4, num5);
+            var max = Math.max(num1, num2, num3, num4, num5);
+
+            $("#output1").html("The <b>sum</b> of the numbers is <b>" + sum + "</b>");
+            $("#output2").html("The <b>product</b> of the numbers is <b>" + product + "</b>");
+            $("#output3").html("The <b>mean</b> of the numbers is <b>" + mean + "</b>");
+            $("#output4").html("The <b>minimum</b> number entered is <b>" + min + "</b>");
+            $("#output5").html("The <b>maximum</b> number entered is <b>" + max + "</b>");
+
+            $('#myModal2').modal('show');
+        }
+        else {
+            swal("Whoopsy!", "Please provide a numerical value for each field.");
+
+        }
+    });
+
+    $("#btn2").click(function () {
+        $("#num1, #num2, #num3, #num4, #num5").val("");
+        $("#output1, #output2, #output3, #output4, #output5").html("");
+    });
+                                    </pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Modal 8-->
+    <div id="myModal8" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal8 content-->
+
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <div class="row">
+                                <pre class="brush: js">
+    $("#btnfac").click(function () {
+        //Step 1: Get the user input
+        var fac1 = $("#fac1").val();
+        var facNum = 1;
+
+        //Step 2: Do something with the data
+        if (fac1 === "") {
+            swal("Whoopsy!", "Please enter a number before before fac-checking.");
+        }
+        else {
+            for (var loop = Number(fac1); loop > 1; loop--) {
+                facNum *= loop;
+            }
+            $("#facout").html("The <b>factorial</b> of <b>" + fac1 + "</b> is <b>" + facNum + "</b>");
+            $('#myModal4').modal('show');        
+        }
+      
+    });
+
+    $("#btnfaccl").click(function () {
+        $("#fac1").val("");
+        $("#facout").html("");
+    });
+                                </pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Modal 9-->
+    <div id="myModal9" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal9 content-->
+
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <div class="row">
+                                <pre class="brush: js">
+$("#btnfb").click(function () {
+        var numfiz = Number($("#numfiz").val());
+        var numbuz = Number($("#numbuz").val());
+        var outputarray = [];
+
+        if (numfiz !== 0 && numbuz !== 0) {
+            for (var loop = 1; loop <= 100; loop++)
+                if (loop % numfiz === 0 && loop % numbuz === 0) {
+                    outputarray.push("<span class='boldItalicPurple'>Fizzbuzz</span>");
+                }
+                else if (loop % numfiz === 0) {
+                    outputarray.push("<span class='boldItalicGreen'>Fizz</span>");
+                }
+                else if (loop % numbuz === 0) {
+                    outputarray.push("<span class='boldItalicOrange'>Buzz</span>");
+                }
+                else {
+                    outputarray.push(loop);
+                }
+                $("#fzbzout").html(outputarray.join(", "));
+                $('#myModal5').modal('show');
+        }
+        else {
+            swal("Whoopsy!", "Please enter a number for both fields before fizzing the buzz.");
+        }
+    });
+
+    $("#btnfbcl").click(function () {
+        $("#numfiz").val("");
+        $("#numbuz").val("");
+        $("#fzbzout").html("");
+    });
+                                </pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @*<footer id="contact">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2 text-center">
+                        <br />
+                        <h2 class="section-heading"><emp>Contact Information</emp></h2>
+                        <hr />
+                        <p>Contact me by phone, email or text and I will get back to you as soon as possible!</p>
+                    </div>
+                    <div class="col-lg-3 text-center">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCkUXzUCG3wX9GKSKKUAucmjag11_r1cWrqxKFVF-T9Urf33UU" height="50" width="50">
+                        <p><a href="tel:336-813-6925">Call</a> or <a href="sms:336-813-6925">Text</a></p>
+                    </div>
+                    <div class="col-lg-3 text-center">
+                        <img src="~/Images/github-512.png" height="50" width="50">
+                        <p><a href="https://github.com/zmw33" target="_blank">GitHub</a></p>
+                    </div>
+                    <div class="col-lg-3 text-center">
+                        <img src="~/Images/linkedin_circle_logo.png" height="50" width="50">
+                        <p><a href="https://www.linkedin.com/in/zachary-wilson-b4752416b/" target="_blank">LinkedIn</a></p>
+                    </div>
+                    <div class="col-lg-3 text-center">
+                        <img src="https://pbs.twimg.com/profile_images/972154872261853184/RnOg6UyU.jpg" height="50" width="50">
+                        <p><a href="mailto:ZacharyWilsonM@gmail.com" target="_blank">Gmail</a></p>
+                    </div>
+
+                </div>
+            </div>
+        </footer>*@
+
+    <!-- jQuery -->
+    <script src="~/Scripts/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="~/Scripts/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="~/Scripts/scrollreveal.min.js"></script>
+
+
+    <!-- Theme JavaScript -->
+    <script src="~/Scripts/creative.min.js"></script>
+
+    <!-- Fonts -->
+
+    <script src="~/Scripts/ZwScript.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <!--Syntax Highlighter-->
+    <script src="~/Scripts/SyntaxHighlighter/shCore.js"></script>
+    @*<script src="~/Scripts/SyntaxHighlighter/shBrushGroovy.js"></script>*@
+    <script src="~/Scripts/SyntaxHighlighter/shBrushJScript.js"></script>
+
+    <script type="text/javascript">
+        SyntaxHighlighter.all();
+    </script>
+
+    <script>
+       
+        if ('@TempData["status"]' == "Success")
+        {
+            swal("Success!", "Your message has been sent!", "success");
+        }
+        else if ('@TempData["status"]' == "Error")
+        {
+            swal("Whoopsy!", "There was a problem sending your message.", "error");
+        }
+
+    </script>
+
+
+
+
+</body>
+</html>
+
+
