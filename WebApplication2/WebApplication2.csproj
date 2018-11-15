@@ -188,6 +188,7 @@
     <Content Include="Images\5.png" />
     <Content Include="Images\blogpicyo.png" />
     <Content Include="Images\bug-silhouette-image.png" />
+    <Content Include="Images\dollarsign.jpg" />
     <Content Include="Images\exclam.jpg" />
     <Content Include="Images\favicon.png" />
     <Content Include="Images\fibu.jpg" />
@@ -206,6 +207,7 @@
     <Content Include="Images\linkedin_circle_logo.png" />
     <Content Include="Images\Mila&amp;I.jpg" />
     <Content Include="Images\money.jpg" />
+    <Content Include="Images\moneybag.jpg" />
     <Content Include="Images\Mountains.jpg" />
     <Content Include="Videos\Screen Recording %2810-18-2018 12-48-42 AM%29.mp4" />
     <Content Include="Images\thumbnails\1.jpg" />
